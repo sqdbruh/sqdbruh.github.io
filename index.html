@@ -1,12 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIF Example</title>
-</head>
-<body>
-    <h1>Welcome to grisha site</h1>
-    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGNqNnV2NzQzNWpzZjZlZDV1M2IxMWMzamNuM3Njc3k3bGl4NHRjOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dg/hrSaKdrpSfW8M9H67w/giphy.gif" alt="Example GIF" width="500" height="300">
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Russo+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <title>GIF Example</title>
+    </head>
+    <body>
+        <script>
+            function toggleText(blockId) {
+                var textBlock = document.getElementById(blockId);
+                var button = document.querySelector(".expand-button");
+                var textSpan = button.querySelector("span"); // Select the <span> that contains the text
+                var icon = button.querySelector(".icon"); // Select the icon inside the button
+
+                if (textBlock.style.display === "none" || textBlock.style.display === "") {
+                    textBlock.style.display = "block";  // Show the text block
+                    textSpan.textContent = "Скрыть"; // Change button text to 'Скрыть'
+                    icon.classList.remove("fa-chevron-down"); // Remove down arrow
+                    icon.classList.add("fa-chevron-up"); // Add up arrow
+                } else {
+                    textBlock.style.display = "none";   // Hide the text block
+                    textSpan.textContent = "Показать полностью"; // Change button text back to 'Показать полностью'
+                    icon.classList.remove("fa-chevron-up"); // Remove up arrow
+                    icon.classList.add("fa-chevron-down"); // Add down arrow
+                }
+            }
+        </script>
+        <div class=container>
+            <div class="sidebar">
+                <div class="sidebar-content">
+                    <p class="title">Григорий Павличенко</p>
+                    <div class="avatar_container">
+                        <div class="placeholder"></div>
+                        <img class="avatar_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="https://i.imgur.com/UhZqWJN.png">
+                    </div>
+                    <div class="job_title_container">
+                        <p class="job_title">Senior Developer</p>
+                    </div>
+
+                    <p class="contacts_quote">Что могу:</p>
+                    <div class="skills_grid">
+                        <div class="skill_item_black">
+                            <i class="fa-solid fa-user"></i>
+                            <span>50 тыс. подписчиков</span>
+                        </div>
+                        <div class="skill_item_black">
+                            <i class="fa-solid fa-check"></i>
+                            <span>Игровая архитектура</span>
+                        </div>
+                        <div class="skill_item">
+                            <i class="fa-solid fa-ghost"></i>
+                            <span>Разьебаловка на месте</span>
+                        </div>
+                        <div class="skill_item">
+                            <i class="fa-solid fa-window-restore"></i>
+                            <span>Знание Web</span>
+                        </div>
+                        <div class="skill_item_black">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Знание языков C</span>
+                        </div>
+                        <div class="skill_item">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <span>Требую 3к+$</span>
+                        </div>
+                        <div class="skill_item_black">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Знание Git</span>
+                        </div>
+                        <div class="skill_item">
+                            <i class="fa-solid fa-user-secret"></i>
+                            <span>Командую людишками</span>
+                        </div>
+                        <div class="skill_item_black">
+                            <i class="fa-solid fa-bomb"></i>
+                            <span>Пошлый))) жестко)</span>
+                        </div>
+                        <div class="skill_item_black">
+                            <i class="fa-solid fa-poo"></i>
+                            <span>Заебался думать</span>
+                        </div>
+                    </div>
+
+                    <p class="contacts_quote">Девочки, ничего не обещаю...<br>Мальчики, пишите!</p>
+                    <div class="contacts_container">
+                        <div class="contact">
+                            <i class="fa-brands fa-telegram" style="color: #58aefe;"></i>
+                            <div class="contacts_container_vertical">
+                                <a href="https://t.me/+varb2LTErpAxMTYy" target="_blank" style="text-decoration: none; color: inherit;">
+                                    Мой канал
+                                </a>
+                                <p class="contacts_grey">это григорий</p>
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <i class="fa-brands fa-telegram" style="color: #58aefe;"></i>
+                            <div class="contacts_container_vertical">
+                                <a href="https://t.me/grygree" target="_blank" style="text-decoration: none; color: inherit;">
+                                    Написать
+                                </a>
+                                <p class="contacts_grey">@grygree</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gameblocks">
+                <div class="gameblock">
+                        <div class="title-container">
+                            <p class="title">
+                                <span style="color: #0AAB4D; text-decoration: underline;">Chillage</span> — амбициозный проект на собственном игровом движке
+                            </p>
+                            <button class="external_link-button">
+                                <i class="fa-brands fa-youtube" style="color: #ff0000;"></i>
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" style="text-decoration: underline; color: inherit;">
+                                    Как я это сделал?
+                                </a>
+                            </button>
+                        </div>
+                        <hr>
+                        <p class="sub_title">
+                            OpenGL, язык C, язык разработанный, шейдеры, и вся остальная хуйня<br>
+                            Вторая строчка, тут еще что-то придумаю
+                        </p>
+                        <div class="two_media_container">
+                            <div class="media_container">
+                                <div class="placeholder"></div>
+                                <img class="media_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM29keTd0cDNqaWdmaDR3enA4M3U0NHp1c29yMjZraDY3cXVvNTQ1aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dg/5VUE84PcHOx5viOegm/giphy.gif">
+                            </div>
+                            <div class="media_container">
+                                <div class="placeholder"></div>
+                                <img class="media_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXo4OGNtNWx1cnBreGFnZjN2ZG56N2RsczdtZXAzd2xvdjZibnc4aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IwAZ6dvvvaTtdI8SD5/giphy.gif">
+                            </div>
+                        </div>
+
+                        <p class="description">
+                            Вот тут прямо пиздец дохуя текста о том, какой я умный и как много всего сделал ебать копать ебать копать ебать копать ебать копать ебать копать ебать копать и рубить деревья!
+                        </p>
+
+                        <div class="expandable-text" id="textBlock">
+                            <p class="description">
+                                Дополнительный текст где я рассказываю кучу всего прикольного!!!!<br><br>
+                                <b>Дата выхода:</b> Ориентировочно когда меня сильно заебет Родион Гейворонка - мой друг нейронка. 
+                            </p>
+                        </div>
+
+                        <div class="button-container">
+                            <button class="expand-button" onclick="toggleText('textBlock')">
+                                <span>Показать полностью</span>
+                                <i class="fas fa-chevron-down icon"></i> <!-- Font Awesome down arrow icon -->
+                            </button>
+                        </div>
+                </div>
+
+                <div class="gameblock">
+                        <div class="title-container">
+                            <p class="title">
+                                <span style="color: #2268BD; text-decoration: underline;">MegaCode</span> — это пиздец инновация, вы просто не понимаете!
+                            </p>
+                            <button class="external_link-button">
+                                <i class="fa-solid fa-bolt"></i>
+                                <a href="https://code.megamod.io/" target="_blank" style="text-decoration: underline; color: inherit;">
+                                    Попробовать в браузере
+                                </a>
+                            </button>
+                        </div>
+                        <hr>
+                        <p class="sub_title">
+                            Это ебать как презентабельно! Мне за это дали повышение! В это играл продакт менеджер дискорда! Он наверное не хуй с горы, да? Да ведь?
+                        </p>
+                        <div class="two_media_container">
+                            <div class="media_container">
+                                <div class="placeholder"></div>
+                                <img class="media_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGpqMDR6d3pzNXJndWRqdzNqaG82MmtleWRsZzF3bjVhaWc2eG03dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1ZDoeNgxJ7QCsYz97b/giphy.gif">
+                            </div>
+                            <div class="media_container">
+                                <div class="placeholder"></div>
+                                <img class="media_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXo3eG14d2syYm5nbGpobjV1a2VrN3VvbGkyZTFkaWZ6Y2FueHBkMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ke7eaxvM1QqNa/giphy.gif">
+                            </div>
+                        </div>
+
+                        <p class="description">
+                            Вот тут прямо пиздец дохуя текста о том, какой я умный и как много всего сделал ебать копать ебать копать ебать копать ебать копать ебать копать ебать копать и рубить деревья!
+                        </p>
+
+                        <div class="expandable-text" id="textBlock1">
+                            <p class="description">
+                                Дополнительный текст где я рассказываю кучу всего прикольного!!!!<br><br>
+                                <b>Дата выхода:</b> Уже вышла 
+                            </p>
+                        </div>
+
+                        <div class="button-container">
+                            <button class="expand-button" onclick="toggleText('textBlock1')">
+                                <span>Показать полностью</span>
+                                <i class="fas fa-chevron-down icon"></i> <!-- Font Awesome down arrow icon -->
+                            </button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
