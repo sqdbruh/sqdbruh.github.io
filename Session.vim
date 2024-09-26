@@ -13,9 +13,9 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +428 index.html
+badd +268 index.html
 badd +143 styles.css
-badd +22 C:/dev/sqdbruh.github.io/content.json
+badd +1 C:/dev/sqdbruh.github.io/content.json
 argglobal
 %argdel
 edit C:/dev/sqdbruh.github.io/content.json
@@ -49,12 +49,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 22 - ((10 * winheight(0) + 26) / 52)
+let s:l = 1 - ((0 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 22
-normal! 0355|
+keepjumps 1
+normal! 0
 wincmd w
 argglobal
 if bufexists(fnamemodify("index.html", ":p")) | buffer index.html | else | edit index.html | endif
@@ -72,12 +72,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 415 - ((17 * winheight(0) + 26) / 52)
+let s:l = 268 - ((23 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 415
-normal! 085|
+keepjumps 268
+normal! 059|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 136 + 137) / 274)
 exe 'vert 2resize ' . ((&columns * 137 + 137) / 274)
