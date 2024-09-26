@@ -78,22 +78,6 @@ hr {
     gap: 2rem;
 }
 
-@media (max-width: 600px) {
-  .container {
-    flex-direction: column;
-  }
-  .gameblocks{
-    margin: 5% 5% 5% 5%;
-    /* position: absolute; /1* Relative to its normal position *1/ */
-    left: 0; /* Offset 20% from the left side of the container */
-    width: 90%;
-  }
-
-  .theme-toggle{
-      margin: 5% auto;
-  }
-}
-
 .gameblock {
     background-color: var(--background-color);
     display: flex;
@@ -109,10 +93,6 @@ hr {
     min-width: 350px;
     color: black;
     padding: 0;
-}
-
-.title-container{
-    gap: 2rem;
 }
 
 .job_title_container {
@@ -243,7 +223,9 @@ hr {
 
 .title-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    gap: 2rem;
 }
 
 .title {
@@ -321,8 +303,29 @@ hr {
 }
 
 .two_media_container {
+    flex-direction: row;
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .gameblocks{
+    margin: 5% 5% 5% 5%;
+    /* position: absolute; /1* Relative to its normal position *1/ */
+    left: 0; /* Offset 20% from the left side of the container */
+    width: 90%;
+  }
+
+  .theme-toggle{
+      margin: 5% auto;
+  }
+
+  .title-container {
+      flex-direction: column;
+  }
 }
 
 .media_container {
