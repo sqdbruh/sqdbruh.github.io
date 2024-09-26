@@ -15,7 +15,7 @@ else
 endif
 badd +257 index.html
 badd +304 styles.css
-badd +13 C:/dev/sqdbruh.github.io/content.json
+badd +11 C:/dev/sqdbruh.github.io/content.json
 argglobal
 %argdel
 edit C:/dev/sqdbruh.github.io/content.json
@@ -49,12 +49,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 13 - ((12 * winheight(0) + 26) / 52)
+let s:l = 11 - ((10 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 13
-normal! 023|
+keepjumps 11
+normal! 0167|
 wincmd w
 argglobal
 if bufexists(fnamemodify("index.html", ":p")) | buffer index.html | else | edit index.html | endif
