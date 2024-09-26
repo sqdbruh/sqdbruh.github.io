@@ -1,17 +1,17 @@
 :root {
-  --background-color: #fff;
-  --border-color: rgba(0,0,0,0.2);
-  --text-color: black;
-  --transparent-text-color: rgba(0, 0, 0, 0.5);
-  --placeholder-color: #ccc;
-}
-
-body.dark-theme {
   --background-color: #000;
   --border-color: rgba(255,255,255,0.2);
   --transparent-text-color: rgba(255,255,255,0.5);
   --text-color: white;
   --placeholder-color: #444;
+}
+
+body.dark-theme {
+  --background-color: #fff;
+  --border-color: rgba(0,0,0,0.2);
+  --text-color: black;
+  --transparent-text-color: rgba(0, 0, 0, 0.5);
+  --placeholder-color: #ccc;
 }
 
 button{

@@ -13,12 +13,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +268 index.html
-badd +143 styles.css
-badd +19 C:/dev/sqdbruh.github.io/content.json
+badd +42 index.html
+badd +9 styles.css
+badd +22 C:/dev/sqdbruh.github.io/content.json
 argglobal
 %argdel
-edit C:/dev/sqdbruh.github.io/content.json
+edit styles.css
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -38,7 +38,7 @@ set winwidth=1
 exe 'vert 1resize ' . ((&columns * 136 + 137) / 274)
 exe 'vert 2resize ' . ((&columns * 137 + 137) / 274)
 argglobal
-balt styles.css
+balt C:/dev/sqdbruh.github.io/content.json
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -49,12 +49,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 16 - ((8 * winheight(0) + 26) / 52)
+let s:l = 9 - ((8 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 16
-normal! 0411|
+keepjumps 9
+normal! 015|
 wincmd w
 argglobal
 if bufexists(fnamemodify("index.html", ":p")) | buffer index.html | else | edit index.html | endif
@@ -72,13 +72,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 266 - ((28 * winheight(0) + 26) / 52)
+let s:l = 42 - ((25 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 266
-normal! 043|
+keepjumps 42
+normal! 0164|
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 136 + 137) / 274)
 exe 'vert 2resize ' . ((&columns * 137 + 137) / 274)
 tabnext 1
