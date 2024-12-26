@@ -15,7 +15,7 @@ else
 endif
 badd +257 index.html
 badd +304 styles.css
-badd +11 C:/dev/sqdbruh.github.io/content.json
+badd +10 C:/dev/sqdbruh.github.io/content.json
 argglobal
 %argdel
 edit C:/dev/sqdbruh.github.io/content.json
@@ -35,8 +35,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 136 + 137) / 274)
-exe 'vert 2resize ' . ((&columns * 137 + 137) / 274)
+exe 'vert 1resize ' . ((&columns * 137 + 137) / 274)
+exe 'vert 2resize ' . ((&columns * 136 + 137) / 274)
 argglobal
 balt styles.css
 setlocal fdm=manual
@@ -49,12 +49,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 11 - ((10 * winheight(0) + 26) / 52)
+let s:l = 10 - ((7 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 11
-normal! 0167|
+keepjumps 10
+normal! 0314|
 wincmd w
 argglobal
 if bufexists(fnamemodify("index.html", ":p")) | buffer index.html | else | edit index.html | endif
@@ -72,15 +72,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 257 - ((27 * winheight(0) + 26) / 52)
+let s:l = 257 - ((31 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 257
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 136 + 137) / 274)
-exe 'vert 2resize ' . ((&columns * 137 + 137) / 274)
+exe 'vert 1resize ' . ((&columns * 137 + 137) / 274)
+exe 'vert 2resize ' . ((&columns * 136 + 137) / 274)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
