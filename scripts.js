@@ -7,7 +7,20 @@ const projectsConfig = [
         media: ['evofrogs1.mp4', 'evofrogs2.mp4'],
         mediaType: 'video',
         hasExpandButton: true,
-        buttons: []
+        buttons: [
+            {
+                icon: 'fa-brands fa-telegram',
+                iconColor: '#58aefe',
+                url: 'https://t.me/pepememe',
+                text: 'Бот с игрой'
+            },
+            {
+                icon: 'fa-brands fa-app-store-ios',
+                iconColor: '#418fde',
+                url: 'https://apps.apple.com/gb/app/evo-frogs/id6744894700?uo=2',
+                text: 'Игра в App Store'
+            }
+        ]
     },
     {
         key: 'megamod',
