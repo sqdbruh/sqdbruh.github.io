@@ -11,26 +11,7 @@
         <title>Grigory Pavlichenko</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-        <script>
-            function toggleText(blockId, event) {
-                var textBlock = document.getElementById(blockId);
-                var button = event.currentTarget; // This refers to the button that was clicked
-                var textSpan = button.querySelector("span"); // Select the <span> that contains the text
-                var icon = button.querySelector(".icon"); // Select the icon inside the button
-
-                if (textBlock.style.display === "none" || textBlock.style.display === "") {
-                    textBlock.style.display = "block";  // Show the text block
-                    textSpan.textContent = "Скрыть"; // Change button text to 'Скрыть'
-                    icon.classList.remove("fa-chevron-down"); // Remove down arrow
-                    icon.classList.add("fa-chevron-up"); // Add up arrow
-                } else {
-                    textBlock.style.display = "none";   // Hide the text block
-                    textSpan.textContent = "Показать полностью"; // Change button text back to 'Показать полностью'
-                    icon.classList.remove("fa-chevron-up"); // Remove up arrow
-                    icon.classList.add("fa-chevron-down"); // Add down arrow
-                }
-            }
-        </script>
+        <script src="scripts.js"></script>
     </head>
     <body>
         <div class=container>
@@ -48,7 +29,7 @@
                     <div class="skills_grid">
                         <div class="skill_item">
                             <i class="fa-solid fa-stopwatch"></i>
-                            <span>6 лет опыта</span>
+                            <span>7 лет опыта</span>
                         </div>
                         <div class="skill_item">
                             <i class="fa-solid fa-dollar-sign"></i>
@@ -56,7 +37,7 @@
                         </div>
                         <div class="skill_item">
                             <i class="fa-solid fa-pager"></i>
-                            <span>23 года</span>
+                            <span>24 года</span>
                         </div>
                         <div class="skill_item">
                             <i class="fa-solid fa-house-laptop"></i>
@@ -80,11 +61,11 @@
                         </div>
                         <div class="skill_item_black">
                             <i class="fa-solid fa-table-cells"></i>
-                            <span>OpenGL, shaders</span>
+                            <span>OpenGL, DirectX 11</span>
                         </div>
                         <div class="skill_item_black">
                             <i class="fa-solid fa-users"></i>
-                            <span>Multiplayer</span>
+                            <span>Multiplayer: Mirror, Photon</span>
                         </div>
                         <div class="skill_item_black">
                             <i class="fa-solid fa-arrow-down-short-wide"></i>
@@ -99,8 +80,8 @@
                             <span>Telegram боты</span>
                         </div>
                         <div class="skill_item_black">
-                            <i class="fa-solid fa-robot"></i>
-                            <span>Backend, Databases</span>
+                            <i class="fa-solid fa-database"></i>
+                            <span>Go, PostgreSQL</span>
                         </div>
                         <div class="skill_item_black">
                             <i class="fa-solid fa-poop"></i>
@@ -137,352 +118,11 @@
             </div>
 
             <div class="gameblocks">
-
-                <div class="gameblock">
-                        <div class="title-container">
-                            <p class="title">
-                                <span style="color: #406bfb; text-decoration: underline;">MegaMod</span> — империя
-                            </p>
-                            <button class="external_link-button">
-                                <i class="fa-solid fa-arrow-right"></i>
-                                <a href="https://investors.megamod.io/" target="_blank" style="text-decoration: underline; color: inherit;">
-                                    Узнать подробнее
-                                </a>
-                            </button>
-                        </div>
-                        <hr>
-                        <p class="sub_title" id="megamod_subtitle">
-                        </p>
-
-                        <p class="description" id="megamod_description">
-                        </p>
-
-                        <div class="expandable-text" id="textBlock0">
-                            <p class="description" id="megamod_content">
-                            </p>
-                        </div>
-
-                        <!-- <div class="button-container"> -->
-                        <!--     <button class="expand-button" onclick="toggleText('textBlock0', event)"> -->
-                        <!--         <span>Показать полностью</span> -->
-                        <!--         <i class="fas fa-chevron-down icon"></i> <!-1- Font Awesome down arrow icon -1-> -->
-                        <!--     </button> -->
-                        <!-- </div> -->
-                </div>
-                <div class="gameblock">
-                        <div class="title-container">
-                            <p class="title">
-                                <span style="color: #0AAB4D; text-decoration: underline;">Chillage</span> — амбициозный пет-проект на собственном игровом движке
-                            </p>
-                            <button class="external_link-button" style="cursor: default;">
-                                <i class="fa-brands fa-youtube" style="color: #ff0000;"></i>
-                                <a style="text-decoration: underline; color: #888; cursor: inherit;">
-                                    Скоро видео о создании
-                                </a>
-                            </button>
-                        </div>
-                        <hr>
-                        <p class="sub_title" id="chillage_subtitle">
-                        </p>
-                        <div class="two_media_container">
-                            <div class="media_container">
-                                <div class="placeholder"></div>
-                                <video class="media_content" loading="lazy" onloadeddata="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" autoplay loop muted playsinline>
-                                    <source src="chillage1.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="media_container">
-                                <div class="placeholder"></div>
-                                <video class="media_content" loading="lazy" onloadeddata="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" autoplay loop muted playsinline>
-                                    <source src="chillage2.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-
-                        <p class="description" id="chillage_description">
-                        </p>
-
-                        <div class="expandable-text" id="textBlock1">
-                            <p class="description" id="chillage_content">
-                            </p>
-                        </div>
-
-                        <div class="button-container">
-                            <button class="expand-button" onclick="toggleText('textBlock1', event)">
-                                <span>Показать полностью</span>
-                                <i class="fas fa-chevron-down icon"></i> <!-- Font Awesome down arrow icon -->
-                            </button>
-                        </div>
-                </div>
-
-                <div class="gameblock">
-                        <div class="title-container">
-                            <p class="title">
-                                <span style="color: #5662f6; text-decoration: underline;">MegaObby</span> — обби для Discord Activities!
-                            </p>
-                            <button class="external_link-button">
-                                <i class="fa-solid fa-bolt"></i>
-                                <a href="https://megaobby.playroom.gg/" target="_blank" style="text-decoration: underline; color: inherit;">
-                                    Попробовать в браузере
-                                </a>
-                            </button>
-                        </div>
-                        <hr>
-                        <p class="sub_title" id="megaobby_subtitle">
-                        </p>
-                        <div class="two_media_container">
-                            <div class="media_container">
-                                <div class="placeholder"></div>
-                                <video class="media_content" loading="lazy" onloadeddata="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" autoplay loop muted playsinline>
-                                    <source src="megaobby1.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="media_container">
-                                <div class="placeholder"></div>
-                                <video class="media_content" loading="lazy" onloadeddata="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" autoplay loop muted playsinline>
-                                    <source src="megaobby2.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-
-                        <p class="description" id="megaobby_description">
-                        </p>
-
-                        <div class="expandable-text" id="textBlock2">
-                            <p class="description" id="megaobby_content">
-                            </p>
-                        </div>
-
-                        <!-- <div class="button-container"> -->
-                        <!--     <button class="expand-button" onclick="toggleText('textBlock2', event)"> -->
-                        <!--         <span>Показать полностью</span> -->
-                        <!--         <i class="fas fa-chevron-down icon"></i> <!-1- Font Awesome down arrow icon -1-> -->
-                        <!--     </button> -->
-                        <!-- </div> -->
-                </div>
-
-                <div class="gameblock">
-                        <div class="title-container">
-                            <p class="title">
-                                <span style="color: #da397d; text-decoration: underline;">NotAlone</span> — LGBT* friendly дейт-сим для одиноких дам и даместосов!
-                            </p>
-                            <button class="external_link-button">
-                                <i class="fa-brands fa-app-store-ios" style="color: #418fde;"></i>
-                                <a href="https://apps.apple.com/us/app/notalone-love-chat-story/id1567415285" target="_blank" style="text-decoration: underline; color: inherit;">
-                                    Игра в AppStore
-                                </a>
-                            </button>
-                        </div>
-                        <hr>
-                        <p class="sub_title" id="notalone_subtitle">
-                        </p>
-                        <div class="two_media_container">
-                            <div class="media_container">
-                                <div class="placeholder"></div>
-                                <img class="media_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="notalone1.png">
-                                </img>
-                            </div>
-                            <div class="media_container">
-                                <div class="placeholder"></div>
-                                <img class="media_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="notalone2.gif">
-                            </div>
-                        </div>
-
-                        <p class="description" id="notalone_description">
-                        </p>
-
-                        <div class="expandable-text" id="textBlock3">
-                            <p class="description" id="notalone_content">
-                            </p>
-                        </div>
-
-                        <div class="button-container">
-                            <button class="expand-button" onclick="toggleText('textBlock3', event)">
-                                <span>Показать полностью</span>
-                                <i class="fas fa-chevron-down icon"></i> <!-- Font Awesome down arrow icon -->
-                            </button>
-                        </div>
-                </div>
-                <div class="gameblock">
-                        <div class="title-container">
-                            <p class="title">
-                                <span style="color: #2268BD; text-decoration: underline;">MegaCode</span> — это инновация, сейчас я вам все объясню!
-                            </p>
-                            <button class="external_link-button">
-                                <i class="fa-solid fa-bolt"></i>
-                                <a href="https://code.megamod.io/" target="_blank" style="text-decoration: underline; color: inherit;">
-                                    Попробовать в браузере
-                                </a>
-                            </button>
-                            <button class="external_link-button">
-                                <i class="fa-brands fa-app-store-ios" style="color: #418fde;"></i>
-                                <a href="https://apps.apple.com/ru/app/megacode-lite/id6463144034" target="_blank" style="text-decoration: underline; color: inherit;">
-                                    Lite в AppStore
-                                </a>
-                            </button>
-                        </div>
-                        <hr>
-                        <p class="sub_title" id="megacode_subtitle">
-                        </p>
-                        <div class="two_media_container">
-                            <div class="media_container">
-                                <div class="placeholder"></div>
-                                <img class="media_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="megacode2.gif">
-                            </div>
-                            <div class="media_container">
-                                <div class="placeholder"></div>
-                                <video class="media_content" loading="lazy" onloadeddata="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" autoplay loop muted playsinline>
-                                    <source src="megacode1.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-
-                        <p class="description" id="megacode_description">
-                        </p>
-
-                        <div class="expandable-text" id="textBlock4">
-                            <p class="description" id="megacode_content">
-                            </p>
-                        </div>
-
-                        <div class="button-container">
-                            <button class="expand-button" onclick="toggleText('textBlock4', event)">
-                                <span>Показать полностью</span>
-                                <i class="fas fa-chevron-down icon"></i> <!-- Font Awesome down arrow icon -->
-                            </button>
-                        </div>
-                </div>
-
-                <div class="gameblock">
-                        <div class="title-container">
-                            <p class="title">
-                                <span style="color: #98c448; text-decoration: underline;">Pretty Tyrant</span> — Tower Defense нового поколения
-                            </p>
-                        </div>
-                        <hr>
-                        <p class="sub_title" id="tyrant_subtitle">
-                        </p>
-                        <div class="two_media_container">
-                            <div class="media_container">
-                                <div class="placeholder"></div>
-                                <img class="media_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="tyrant1.png">
-                            </div>
-                            <div class="media_container">
-                                <div class="placeholder"></div>
-                                <img class="media_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="tyrant2.gif">
-                            </div>
-                        </div>
-
-                        <p class="description" id="tyrant_description">
-                        </p>
-
-                        <div class="expandable-text" id="textBlock5">
-                            <p class="description" id="tyrant_content">
-                            </p>
-                        </div>
-
-                        <div class="button-container">
-                            <button class="expand-button" onclick="toggleText('textBlock5', event)">
-                                <span>Показать полностью</span>
-                                <i class="fas fa-chevron-down icon"></i> <!-- Font Awesome down arrow icon -->
-                            </button>
-                        </div>
-                </div>
-
-                <div class="gameblock">
-                        <div class="title-container">
-                            <p class="title">
-                                <span style="color: #bdd2e5; text-decoration: underline;">Sketch-Pro</span> — медитативная раскраска по номерам
-                            </p>
-                        </div>
-                        <hr>
-                        <p class="sub_title" id="sketch_subtitle">
-                        </p>
-                        <div class="two_media_container">
-                            <div class="media_container">
-                                <div class="placeholder"></div>
-                                <img class="media_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="sketchpro1.jpg">
-                            </div>
-                            <div class="media_container">
-                                <div class="placeholder"></div>
-                                <img class="media_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="sketchpro2.jpg">
-                            </div>
-                        </div>
-
-                        <p class="description" id="sketch_description">
-                        </p>
-
-                        <div class="expandable-text" id="textBlock6">
-                            <p class="description" id="sketch_content">
-                            </p>
-                        </div>
-
-                        <div class="button-container">
-                            <button class="expand-button" onclick="toggleText('textBlock6', event)">
-                                <span>Показать полностью</span>
-                                <i class="fas fa-chevron-down icon"></i> <!-- Font Awesome down arrow icon -->
-                            </button>
-                        </div>
-                </div>
+                <!-- Projects will be generated by JavaScript -->
             </div>
 
             <button class="theme-toggle" id="theme-toggle">
             </button>
         </div>
     </body>
-
-
-    <script>
-        const themeToggleButton = document.getElementById('theme-toggle');
-        const body = document.body;
-
-        function updateButtonText(isDarkTheme) {
-            themeToggleButton.textContent = isDarkTheme ? 'Dark Theme' : 'Light Theme';
-        }
-
-        const savedTheme = localStorage.getItem('theme');
-
-        if (savedTheme) {
-            const isDarkTheme = savedTheme === 'dark';
-            body.classList.toggle('dark-theme', isDarkTheme);
-            updateButtonText(isDarkTheme);
-        } else {
-            updateButtonText(false);
-        }
-
-        themeToggleButton.addEventListener('click', () => {
-            const isDarkTheme = body.classList.toggle('dark-theme');
-
-            localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
-
-            updateButtonText(isDarkTheme);
-        });
-    </script>
-    <script>
-        fetch('content.json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('chillage_subtitle').innerText = data.chillage_subtitle;
-                document.getElementById('chillage_description').innerText = data.chillage_description;
-                document.getElementById('chillage_content').innerText = data.chillage_content;
-                document.getElementById('megacode_subtitle').innerText = data.megacode_subtitle;
-                document.getElementById('megacode_description').innerText = data.megacode_description;
-                document.getElementById('megacode_content').innerText = data.megacode_content;
-                document.getElementById('megaobby_subtitle').innerText = data.megaobby_subtitle;
-                document.getElementById('megaobby_description').innerText = data.megaobby_description;
-                document.getElementById('megaobby_content').innerText = data.megaobby_content;
-                document.getElementById('tyrant_subtitle').innerText = data.tyrant_subtitle;
-                document.getElementById('tyrant_description').innerText = data.tyrant_description;
-                document.getElementById('tyrant_content').innerText = data.tyrant_content;
-                document.getElementById('notalone_subtitle').innerText = data.notalone_subtitle;
-                document.getElementById('notalone_description').innerText = data.notalone_description;
-                document.getElementById('notalone_content').innerText = data.notalone_content;
-                document.getElementById('sketch_subtitle').innerText = data.sketch_subtitle;
-                document.getElementById('sketch_description').innerText = data.sketch_description;
-                document.getElementById('sketch_content').innerText = data.sketch_content;
-                document.getElementById('megamod_subtitle').innerText = data.megamod_subtitle;
-                document.getElementById('megamod_description').innerText = data.megamod_description;
-                document.getElementById('megamod_content').innerText = data.megamod_content;
-            });
-    </script>
 </html>
