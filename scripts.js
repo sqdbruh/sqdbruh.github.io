@@ -1,307 +1,196 @@
-// Configuration for all projects
-const projectsConfig = [
-    {
-        key: 'evofrogs',
-        color: '#4CAF50',
-        title: 'Evo Frogs — криптопроект с инвестициями $3млн',
-        media: ['evofrogs1.mp4', 'evofrogs2.mp4'],
-        mediaType: 'video',
-        hasExpandButton: true,
-        buttons: [
-            {
-                icon: 'fa-brands fa-telegram',
-                iconColor: '#58aefe',
-                url: 'https://t.me/pepememe',
-                text: 'Бот с игрой'
-            },
-            {
-                icon: 'fa-brands fa-app-store-ios',
-                iconColor: '#418fde',
-                url: 'https://apps.apple.com/gb/app/evo-frogs/id6744894700?uo=2',
-                text: 'Игра в App Store'
-            }
-        ]
-    },
-    {
-        key: 'megamod',
-        color: '#406bfb',
-        title: 'MegaMod — империя',
-        media: [],
-        mediaType: null,
-        hasExpandButton: false,
-        buttons: [
-            {
-                icon: 'fa-solid fa-arrow-right',
-                url: 'https://investors.megamod.io/',
-                text: 'Узнать подробнее'
-            }
-        ]
-    },
-    {
-        key: 'chillage',
-        color: '#0AAB4D',
-        title: 'Chillage — амбициозный пет-проект на собственном игровом движке',
-        media: ['chillage1.mp4', 'chillage2.mp4'],
-        mediaType: 'video',
-        hasExpandButton: true,
-        buttons: [
-            {
-                icon: 'fa-brands fa-youtube',
-                iconColor: '#ff0000',
-                text: 'Скоро видео о создании',
-                disabled: true
-            }
-        ]
-    },
-    {
-        key: 'megaobby',
-        color: '#5662f6',
-        title: 'MegaObby — обби для Discord Activities!',
-        media: ['megaobby1.mp4', 'megaobby2.mp4'],
-        mediaType: 'video',
-        hasExpandButton: false,
-        buttons: [
-            {
-                icon: 'fa-solid fa-bolt',
-                url: 'https://megarun.playroom.gg/',
-                text: 'Попробовать в браузере'
-            }
-        ]
-    },
-    {
-        key: 'notalone',
-        color: '#da397d',
-        title: 'NotAlone — LGBT* friendly дейт-сим для одиноких дам и даместосов!',
-        media: ['notalone1.png', 'notalone2.gif'],
-        mediaType: 'image',
-        hasExpandButton: true,
-        buttons: [
-            {
-                icon: 'fa-brands fa-app-store-ios',
-                iconColor: '#418fde',
-                url: 'https://apps.apple.com/us/app/notalone-love-chat-story/id1567415285',
-                text: 'Игра в AppStore'
-            }
-        ]
-    },
-    {
-        key: 'megacode',
-        color: '#2268BD',
-        title: 'MegaCode — это инновация, сейчас я вам все объясню!',
-        media: ['megacode2.gif', 'megacode1.mp4'],
-        mediaType: 'mixed',
-        hasExpandButton: true,
-        buttons: [
-            {
-                icon: 'fa-solid fa-bolt',
-                url: 'https://code.megamod.io/',
-                text: 'Попробовать в браузере'
-            },
-            {
-                icon: 'fa-brands fa-app-store-ios',
-                iconColor: '#418fde',
-                url: 'https://apps.apple.com/ru/app/megacode-lite/id6463144034',
-                text: 'Lite в AppStore'
-            }
-        ]
-    },
-    {
-        key: 'tyrant',
-        color: '#98c448',
-        title: 'Pretty Tyrant — Tower Defense нового поколения',
-        media: ['tyrant1.png', 'tyrant2.gif'],
-        mediaType: 'image',
-        hasExpandButton: true,
-        buttons: []
-    },
-    {
-        key: 'sketch',
-        color: '#bdd2e5',
-        title: 'Sketch-Pro — медитативная раскраска по номерам',
-        media: ['sketchpro1.jpg', 'sketchpro2.jpg'],
-        mediaType: 'image',
-        hasExpandButton: true,
-        buttons: []
-    }
-];
-
-// Toggle text function
-function toggleText(blockId, event) {
-    const textBlock = document.getElementById(blockId);
-    const button = event.currentTarget;
-    const textSpan = button.querySelector("span");
-    const icon = button.querySelector(".icon");
-
-    if (textBlock.style.display === "none" || textBlock.style.display === "") {
-        textBlock.style.display = "block";
-        textSpan.textContent = "Скрыть";
-        icon.classList.remove("fa-chevron-down");
-        icon.classList.add("fa-chevron-up");
-    } else {
-        textBlock.style.display = "none";
-        textSpan.textContent = "Показать полностью";
-        icon.classList.remove("fa-chevron-up");
-        icon.classList.add("fa-chevron-down");
-    }
-}
-
-// Generate media HTML
-function generateMediaHTML(media, mediaType, projectKey) {
-    if (!media || media.length === 0) return '';
-    
-    return `
-        <div class="two_media_container">
-            ${media.map((mediaFile, index) => {
-                const isVideo = mediaType === 'video' || 
-                              (mediaType === 'mixed' && mediaFile.endsWith('.mp4'));
-                
-                if (isVideo) {
-                    return `
-                        <div class="media_container">
-                            <div class="placeholder"></div>
-                            <video class="media_content" loading="lazy" onloadeddata="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" autoplay loop muted playsinline>
-                                <source src="${mediaFile}" type="video/mp4">
-                            </video>
-                        </div>
-                    `;
-                } else {
-                    return `
-                        <div class="media_container">
-                            <div class="placeholder"></div>
-                            <img class="media_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="${mediaFile}">
-                        </div>
-                    `;
-                }
-            }).join('')}
-        </div>
-    `;
-}
-
-// Generate buttons HTML
-function generateButtonsHTML(buttons) {
-    if (!buttons || buttons.length === 0) return '';
-    
-    return buttons.map(button => {
-        const iconStyle = button.iconColor ? `style="color: ${button.iconColor};"` : '';
-        const buttonStyle = button.disabled ? 'style="cursor: default;"' : '';
-        const linkStyle = button.disabled ? 'style="text-decoration: underline; color: #888; cursor: inherit;"' : 
-                                           'style="text-decoration: underline; color: inherit;"';
-        const targetBlank = button.disabled ? '' : 'target="_blank"';
-        const href = button.disabled ? '#' : button.url;
-        
-        return `
-            <button class="external_link-button" ${buttonStyle}>
-                <i class="${button.icon}" ${iconStyle}></i>
-                <a href="${href}" ${targetBlank} ${linkStyle}>
-                    ${button.text}
-                </a>
-            </button>
-        `;
-    }).join('');
-}
-
-// Generate project block HTML
-function generateProjectBlock(project, index) {
-    const projectName = project.title.split(' — ')[0];
-    const projectDescription = project.title.split(' — ')[1] || '';
-    
-    const expandButtonHTML = project.hasExpandButton ? `
-        <div class="button-container">
-            <button class="expand-button" onclick="toggleText('textBlock${index}', event)">
-                <span>Показать полностью</span>
-                <i class="fas fa-chevron-down icon"></i>
-            </button>
-        </div>
-    ` : '';
-
-    return `
-        <div class="gameblock">
-            <div class="title-container">
-                <p class="title">
-                    <span class="project-${project.key}">${projectName}</span>${projectDescription ? ' — ' + projectDescription : ''}
-                </p>
-                ${generateButtonsHTML(project.buttons)}
-            </div>
-            <hr>
-            <p class="sub_title" id="${project.key}_subtitle"></p>
-            ${generateMediaHTML(project.media, project.mediaType, project.key)}
-            <p class="description" id="${project.key}_description"></p>
-            <div class="expandable-text" id="textBlock${index}">
-                <p class="description" id="${project.key}_content"></p>
-            </div>
-            ${expandButtonHTML}
-        </div>
-    `;
-}
-
-// Generate all project blocks
-function generateProjectBlocks() {
-    const gameblocks = document.querySelector('.gameblocks');
-    if (!gameblocks) return;
-    
-    gameblocks.innerHTML = projectsConfig.map((project, index) => 
-        generateProjectBlock(project, index)
-    ).join('');
-}
-
-// Load content from JSON
-function loadContent() {
-    fetch('content.json')
-        .then(response => response.json())
-        .then(data => {
-            projectsConfig.forEach(project => {
-                const elements = {
-                    subtitle: document.getElementById(`${project.key}_subtitle`),
-                    description: document.getElementById(`${project.key}_description`),
-                    content: document.getElementById(`${project.key}_content`)
-                };
-                
-                if (elements.subtitle && data[`${project.key}_subtitle`]) {
-                    elements.subtitle.innerText = data[`${project.key}_subtitle`];
-                }
-                if (elements.description && data[`${project.key}_description`]) {
-                    elements.description.innerText = data[`${project.key}_description`];
-                }
-                if (elements.content && data[`${project.key}_content`]) {
-                    elements.content.innerText = data[`${project.key}_content`];
-                }
-            });
-        })
-        .catch(error => console.error('Error loading content:', error));
-}
-
-// Theme toggle functionality
-function initThemeToggle() {
-    const themeToggleButton = document.getElementById('theme-toggle');
+(function () {
     const body = document.body;
+    const themeButton = document.getElementById("theme-toggle");
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
 
-    function updateButtonText(isDarkTheme) {
-        themeToggleButton.textContent = isDarkTheme ? 'Dark Theme' : 'Light Theme';
+    function setTheme(theme) {
+        const isLight = theme === "light";
+        body.classList.toggle("light", isLight);
+        if (themeButton) {
+            themeButton.setAttribute("aria-pressed", String(isLight));
+            themeButton.title = isLight ? "Темная тема" : "Светлая тема";
+        }
+        if (themeMeta) {
+            themeMeta.setAttribute("content", isLight ? "#ffffff" : "#050505");
+        }
     }
 
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem("theme");
+    setTheme(savedTheme || "dark");
 
-    if (savedTheme) {
-        const isDarkTheme = savedTheme === 'dark';
-        body.classList.toggle('dark-theme', isDarkTheme);
-        updateButtonText(isDarkTheme);
+    if (themeButton) {
+        themeButton.addEventListener("click", () => {
+            const nextTheme = body.classList.contains("light") ? "dark" : "light";
+            localStorage.setItem("theme", nextTheme);
+            setTheme(nextTheme);
+        });
+    }
+
+    function loadThumb(img) {
+        if (!img || img.dataset.loaded) return;
+        img.dataset.loaded = "true";
+        img.addEventListener("load", () => img.classList.add("loaded"), { once: true });
+        img.src = img.dataset.thumbSrc;
+    }
+
+    function initLazyThumbs() {
+        const thumbs = Array.from(document.querySelectorAll("img[data-thumb-src]"));
+        if (!("IntersectionObserver" in window)) {
+            thumbs.forEach(loadThumb);
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                observer.unobserve(entry.target);
+                loadThumb(entry.target);
+            });
+        }, { rootMargin: "320px 0px" });
+
+        thumbs.forEach((img) => observer.observe(img));
+    }
+
+    const onIdle = window.requestIdleCallback || ((callback) => setTimeout(callback, 350));
+    onIdle(initLazyThumbs, { timeout: 1200 });
+
+    const videoMedias = Array.from(document.querySelectorAll(".media[data-hover-video]"));
+
+    function ensureHoverVideo(media) {
+        let video = media.querySelector("video.hover-video");
+        if (video) return video;
+
+        const thumb = media.querySelector(".media-thumb");
+        if (thumb) loadThumb(thumb);
+
+        video = document.createElement("video");
+        video.className = "hover-video";
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = "auto";
+        video.src = media.dataset.hoverVideo;
+        video.addEventListener("canplay", () => showVideo(media, video), { once: true });
+        media.append(video);
+        return video;
+    }
+
+    function showVideo(media, video) {
+        video.classList.add("loaded");
+        media.classList.add("video-ready");
+        video.play().catch(() => {});
+    }
+
+    function playHoverVideo(media) {
+        if (!media || !media.dataset.hoverVideo) return;
+        const video = ensureHoverVideo(media);
+        media.classList.add("hovering");
+        if (video.readyState >= 3) showVideo(media, video);
+        video.play().catch(() => {});
+    }
+
+    function pauseHoverVideo(media) {
+        if (media && media.classList.contains("video-ready")) {
+            media.classList.remove("hovering");
+            return;
+        }
+        const video = media && media.querySelector("video.hover-video");
+        if (!video) return;
+        video.pause();
+        video.currentTime = 0;
+        media.classList.remove("hovering");
+    }
+
+    function startVideoHydration() {
+        videoMedias.forEach((media) => {
+            const video = ensureHoverVideo(media);
+            if (video.readyState >= 3) showVideo(media, video);
+            else video.load();
+        });
+    }
+
+    function resumeReadyVideos() {
+        videoMedias.forEach((media) => {
+            const video = media.querySelector("video.hover-video");
+            if (video && media.classList.contains("video-ready")) {
+                video.play().catch(() => {});
+            }
+        });
+    }
+
+    function pauseReadyVideos() {
+        videoMedias.forEach((media) => {
+            const video = media.querySelector("video.hover-video");
+            if (video) video.pause();
+        });
+    }
+
+    function scheduleVideoHydration() {
+        window.setTimeout(() => onIdle(startVideoHydration, { timeout: 1600 }), 700);
+    }
+
+    if (document.readyState === "complete") {
+        scheduleVideoHydration();
     } else {
-        updateButtonText(false);
+        window.addEventListener("load", scheduleVideoHydration, { once: true });
     }
 
-    themeToggleButton.addEventListener('click', () => {
-        const isDarkTheme = body.classList.toggle('dark-theme');
-        localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
-        updateButtonText(isDarkTheme);
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            pauseReadyVideos();
+        } else {
+            resumeReadyVideos();
+        }
     });
-}
 
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    generateProjectBlocks();
-    loadContent();
-    initThemeToggle();
-});
+    videoMedias.forEach((media) => {
+        media.addEventListener("pointerenter", () => playHoverVideo(media));
+        media.addEventListener("pointerleave", () => pauseHoverVideo(media));
+        media.addEventListener("mouseenter", () => playHoverVideo(media));
+        media.addEventListener("mouseleave", () => pauseHoverVideo(media));
+        media.addEventListener("mousemove", () => {
+            if (!media.classList.contains("hovering")) playHoverVideo(media);
+        });
+        media.addEventListener("focus", () => playHoverVideo(media));
+        media.addEventListener("blur", () => pauseHoverVideo(media));
+    });
 
-// Make toggleText available globally for onclick handlers
-window.toggleText = toggleText; 
+    document.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-load-media]");
+        if (!button) return;
+
+        const media = button.closest(".media");
+        if (!media || media.dataset.fullLoaded) return;
+
+        const src = media.dataset.fullSrc;
+        const thumb = media.querySelector(".media-thumb");
+        if (!src) return;
+
+        media.dataset.fullLoaded = "true";
+        button.remove();
+
+        if (media.dataset.kind === "video") {
+            const video = document.createElement("video");
+            video.className = "loaded";
+            video.controls = true;
+            video.autoplay = true;
+            video.loop = true;
+            video.muted = true;
+            video.playsInline = true;
+            video.preload = "metadata";
+            video.src = src;
+            if (thumb) thumb.replaceWith(video);
+            else media.append(video);
+            video.play().catch(() => {});
+            return;
+        }
+
+        const image = document.createElement("img");
+        image.decoding = "async";
+        image.alt = thumb ? thumb.alt : "";
+        image.addEventListener("load", () => image.classList.add("loaded"), { once: true });
+        image.src = src;
+        if (thumb) thumb.replaceWith(image);
+        else media.append(image);
+    });
+})();

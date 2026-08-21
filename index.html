@@ -1,128 +1,294 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Russo+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="styles.css">
-        <title>Grigory Pavlichenko</title>
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-        <script src="scripts.js"></script>
-    </head>
-    <body>
-        <div class=container>
-            <div class="sidebar">
-                <div class="sidebar-content">
-                    <p class="title">Григорий Павличенко</p>
-                    <div class="avatar_container">
-                        <div class="placeholder"></div>
-                        <img class="avatar_content" loading="lazy" onload="this.classList.add('loaded'); this.previousElementSibling.style.display = 'none';" src="avatar.png">
-                    </div>
-                    <div class="job_title_container">
-                        <p class="job_title">Senior Developer</p>
-                    </div>
-
-                    <div class="skills_grid">
-                        <div class="skill_item">
-                            <i class="fa-solid fa-stopwatch"></i>
-                            <span>7 лет опыта</span>
-                        </div>
-                        <div class="skill_item">
-                            <i class="fa-solid fa-dollar-sign"></i>
-                            <span>4000$+</span>
-                        </div>
-                        <div class="skill_item">
-                            <i class="fa-solid fa-pager"></i>
-                            <span>24 года</span>
-                        </div>
-                        <div class="skill_item">
-                            <i class="fa-solid fa-house-laptop"></i>
-                            <span>Remote</span>
-                        </div>
-                        <div class="skill_item_black">
-                            <i class="fa-solid fa-cube"></i>
-                            <span>Unity3D</span>
-                        </div>
-                        <div class="skill_item_black">
-                            <i class="fa-solid fa-code"></i>
-                            <span>C/C++, C#</span>
-                        </div>
-                        <div class="skill_item_black">
-                            <i class="fa-solid fa-arrow-down-short-wide"></i>
-                            <span>Client-Server Games</span>
-                        </div>
-                        <div class="skill_item_black">
-                            <i class="fa-solid fa-window-restore"></i>
-                            <span>Web</span>
-                        </div>
-                        <div class="skill_item_black">
-                            <i class="fa-solid fa-table-cells"></i>
-                            <span>OpenGL, DirectX 11</span>
-                        </div>
-                        <div class="skill_item_black">
-                            <i class="fa-solid fa-users"></i>
-                            <span>Multiplayer: Mirror, Photon</span>
-                        </div>
-                        <div class="skill_item_black">
-                            <i class="fa-solid fa-arrow-down-short-wide"></i>
-                            <span>Async, Multithreading</span>
-                        </div>
-                        <div class="skill_item_black">
-                            <i class="fa-solid fa-gamepad"></i>
-                            <span>Core Gameplay</span>
-                        </div>
-                        <div class="skill_item_black">
-                            <i class="fa-solid fa-robot"></i>
-                            <span>Telegram боты</span>
-                        </div>
-                        <div class="skill_item_black">
-                            <i class="fa-solid fa-database"></i>
-                            <span>Go, PostgreSQL</span>
-                        </div>
-                        <div class="skill_item_black">
-                            <i class="fa-solid fa-poop"></i>
-                            <span>SOLID, OOP</span>
-                        </div>
-                        <div class="skill_item_black">
-                            <i class="fa-solid fa-pen-nib"></i>
-                            <span>UI/UX Design</span>
-                        </div>
-                    </div>
-
-        
-                    <div class="contacts_container">
-                        <div class="contact">
-                            <i class="fa-brands fa-telegram" style="color: #58aefe;"></i>
-                            <div class="contacts_container_vertical">
-                                <a href="https://t.me/+varb2LTErpAxMTYy" target="_blank" style="text-decoration: none;">
-                                    Мой канал
-                                </a>
-                                <p class="contacts_grey">это григорий</p>
-                            </div>
-                        </div>
-                        <div class="contact">
-                            <i class="fa-brands fa-telegram" style="color: #58aefe;"></i>
-                            <div class="contacts_container_vertical">
-                                <a href="https://t.me/grygree" target="_blank" style="text-decoration: none;">
-                                    Написать
-                                </a>
-                                <p class="contacts_grey">@grygree</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#050505">
+    <title>Grigory Pavlichenko</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23050505'/%3E%3Ctext x='8' y='12' font-size='10' text-anchor='middle' fill='white' font-family='Arial'%3EG%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>:root{color-scheme:dark;--bg:#050505;--fg:#fff;--muted:rgba(255,255,255,.58);--line:rgba(255,255,255,.2);--panel:#0d0d0d;--chip-bg:#fff;--chip-fg:#111;--dark-chip:#111;--dark-chip-fg:rgba(255,255,255,.86);--ph:#292929}body.light{color-scheme:light;--bg:#fff;--fg:#060606;--muted:rgba(0,0,0,.58);--line:rgba(0,0,0,.18);--panel:#fff;--chip-bg:#111;--chip-fg:#fff;--dark-chip:#f2f2f2;--dark-chip-fg:#111;--ph:#ddd}*{box-sizing:border-box}html{font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}body{margin:0;background:var(--bg);color:var(--fg)}a{color:inherit}button,summary{font:inherit;color:inherit}.shell{display:grid;grid-template-columns:minmax(280px,350px) minmax(0,920px);gap:clamp(24px,5vw,72px);align-items:start;padding:clamp(16px,5vw,64px)}.shell,.sidebar,.projects,.card,.chip,.contact,.project-link{min-width:0}.sidebar{display:grid;gap:22px;justify-items:center}.name{margin:0;text-align:center;font-size:clamp(1.4rem,2vw,1.8rem);line-height:1.18;font-weight:900}.avatar{width:clamp(128px,18vw,250px);aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--ph)}.avatar img,.media img,.media video{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .25s}.loaded{opacity:1!important}.role{width:100%;padding:14px;border:2px solid var(--line);border-radius:18px;text-align:center;font-size:1.35rem;font-weight:750}.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%}.chip,.contact,.card,.project-link{border:2px solid var(--line);border-radius:18px}.chip{display:flex;align-items:center;gap:10px;min-height:50px;padding:9px 10px;background:var(--dark-chip);color:var(--dark-chip-fg);font-weight:750}.chip.primary{background:var(--chip-bg);color:var(--chip-fg)}.chip span:last-child,.project-link span:last-child,.contact span:last-child{min-width:0;overflow-wrap:anywhere}.ico{display:inline-grid;place-items:center;flex:0 0 auto;min-width:2.15em;height:2.15em;border-radius:999px;background:rgba(127,127,127,.16);font-size:.66rem;font-weight:900;text-transform:uppercase}.contacts{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}.contact{display:flex;align-items:center;gap:12px;padding:10px 12px;text-decoration:none;font-weight:760}.contact small{display:block;color:var(--muted);font-size:.78rem}.projects{display:grid;gap:32px}.card{display:grid;gap:16px;padding:clamp(17px,3vw,35px);background:var(--panel);content-visibility:auto;contain-intrinsic-size:520px}.card header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.card h2{margin:0;font-size:clamp(1.15rem,2vw,1.75rem);line-height:1.25}.project-name{color:var(--accent);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}.actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px}.project-link{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:56px;min-width:min(10rem,100%);padding:10px 13px;background:var(--bg);text-decoration:none;font-weight:760}.project-link.disabled{color:var(--muted);cursor:default}.project-link .ico{color:var(--icon-color,currentColor)}hr{width:100%;height:1px;border:0;margin:0;background:var(--line)}.muted{margin:0;color:var(--muted);font-weight:650;white-space:pre-line}.text{margin:0;white-space:pre-line}.media-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.media{position:relative;margin:0;height:200px;border-radius:18px;overflow:hidden;background:var(--ph);border:1px solid var(--line)}.media-action{position:absolute;right:10px;bottom:10px;display:grid;place-items:center;width:42px;height:42px;border:2px solid rgba(255,255,255,.42);border-radius:999px;background:rgba(0,0,0,.62);color:white;cursor:pointer}.media-action span{transform:translateX(1px)}.more summary{cursor:pointer;list-style:none;text-align:right;text-decoration:underline;font-weight:760}.more summary::-webkit-details-marker{display:none}.more .text{margin-top:12px}.theme{position:fixed;right:16px;bottom:16px;z-index:5;display:grid;place-items:center;width:48px;height:48px;border:2px solid var(--line);border-radius:999px;background:var(--bg);box-shadow:0 8px 24px rgba(0,0,0,.22);cursor:pointer;font-weight:900}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}@media(max-width:820px){html{font-size:14px}.shell{grid-template-columns:minmax(0,1fr);padding:clamp(12px,4vw,28px)}.sidebar{gap:16px}.skills{grid-template-columns:minmax(0,1fr)}.contacts{grid-template-columns:minmax(0,1fr)}.card header{display:grid}.actions{justify-content:flex-start}.media-row{grid-template-columns:minmax(0,1fr)}.media{height:180px}.project-link{width:100%;min-width:0}.theme{right:12px;bottom:12px}}@media(max-width:380px){.media{height:150px}.chip{font-size:.92rem}.name{font-size:1.25rem}}</style>
+    <style>.contacts{grid-template-columns:1fr}.ico{width:1.65rem;min-width:1.65rem;height:1.65rem;font-size:.82rem;text-transform:none}.contact .ico{color:var(--icon-color,currentColor)}.more summary{display:flex;align-items:center;justify-content:flex-end;gap:8px}.more summary .summary-icon{transition:transform .2s}.more[open] summary .summary-icon{transform:rotate(180deg)}.media[data-hover-video]{cursor:default}.media[data-hover-video] video.hover-video{position:absolute;inset:0;opacity:0!important;pointer-events:none}.media[data-hover-video].hovering video.hover-video,.media[data-hover-video].video-ready video.hover-video{opacity:1!important}.media[data-hover-video].hovering .media-thumb,.media[data-hover-video].video-ready .media-thumb{opacity:0!important}</style>
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <main class="shell">
+        <aside class="sidebar" aria-label="Профиль">
+            <h1 class="name">Григорий Павличенко</h1>
+            <div class="avatar">
+                <img data-thumb-src="avatar.webp" width="320" height="320" decoding="async" loading="lazy" alt="Григорий Павличенко">
             </div>
-
-            <div class="gameblocks">
-                <!-- Projects will be generated by JavaScript -->
+            <div class="role">Senior Developer</div>
+            <div class="skills">
+                    <div class="chip primary"><i class="ico fa-solid fa-stopwatch" aria-hidden="true"></i><span>7 лет опыта</span></div>
+                    <div class="chip primary"><i class="ico fa-solid fa-dollar-sign" aria-hidden="true"></i><span>5000$</span></div>
+                    <div class="chip primary"><i class="ico fa-solid fa-pager" aria-hidden="true"></i><span>24 года</span></div>
+                    <div class="chip primary"><i class="ico fa-solid fa-house-laptop" aria-hidden="true"></i><span>Remote</span></div>
+                    <div class="chip"><i class="ico fa-solid fa-cube" aria-hidden="true"></i><span>Unity3D</span></div>
+                    <div class="chip"><i class="ico fa-solid fa-code" aria-hidden="true"></i><span>C/C++, C#</span></div>
+                    <div class="chip"><i class="ico fa-solid fa-arrow-down-short-wide" aria-hidden="true"></i><span>Client-Server Games</span></div>
+                    <div class="chip"><i class="ico fa-solid fa-window-restore" aria-hidden="true"></i><span>Web</span></div>
+                    <div class="chip"><i class="ico fa-solid fa-table-cells" aria-hidden="true"></i><span>OpenGL, DirectX 11</span></div>
+                    <div class="chip"><i class="ico fa-solid fa-users" aria-hidden="true"></i><span>Multiplayer: Mirror, Photon</span></div>
+                    <div class="chip"><i class="ico fa-solid fa-arrow-down-short-wide" aria-hidden="true"></i><span>Async, Multithreading</span></div>
+                    <div class="chip"><i class="ico fa-solid fa-gamepad" aria-hidden="true"></i><span>Core Gameplay</span></div>
+                    <div class="chip"><i class="ico fa-solid fa-robot" aria-hidden="true"></i><span>Telegram боты</span></div>
+                    <div class="chip"><i class="ico fa-solid fa-database" aria-hidden="true"></i><span>Go, PostgreSQL</span></div>
+                    <div class="chip"><i class="ico fa-solid fa-poop" aria-hidden="true"></i><span>SOLID, OOP</span></div>
+                    <div class="chip"><i class="ico fa-solid fa-pen-nib" aria-hidden="true"></i><span>UI/UX Design</span></div>
             </div>
+            <div class="contacts">
+                <a class="contact" href="https://t.me/grygree" target="_blank" rel="noopener noreferrer"><i class="ico fa-brands fa-telegram" style="--icon-color:#58aefe" aria-hidden="true"></i><span>Написать<small>@grygree</small></span></a>
+            </div>
+        </aside>
+        <section class="projects" aria-label="Проекты">
+        <article class="card" style="--accent:#c8a46a" id="lost-railway">
+            <header>
+                <h2><span class="project-name">Lost Railway - кооперативный хоррор</span></h2>
+                <div class="actions"><a class="project-link" href="https://store.steampowered.com/app/862750/Lost_Railway/" target="_blank" rel="noopener noreferrer"><i class="ico fa-brands fa-steam" aria-hidden="true"></i><span>Подробнее в Steam</span></a></div>
+            </header>
+            <hr>
+            <p class="muted">Техлид проекта. Большая команда. Больше 100 000 вишлистов в Steam.</p>
+            <div class="media-row">
+                <figure class="media" data-hover-video="clips/lostrailway1.mp4" tabindex="0">
+                    <img class="media-thumb" data-thumb-src="thumbs/lostrailway1.webp" width="480" height="270" decoding="async" loading="lazy" alt="Lost Railway screenshot 1">
+                </figure>
+                <figure class="media" data-hover-video="clips/lostrailway2.mp4" tabindex="0">
+                    <img class="media-thumb" data-thumb-src="thumbs/lostrailway2.webp" width="480" height="270" decoding="async" loading="lazy" alt="Lost Railway screenshot 2">
+                </figure>
+            </div>
+            <p class="text">NDA 💀
+Но можно глянуть трейлер и посмотреть страничку в Steam 😊</p>
+        </article>
+        <article class="card" style="--accent:#fc3f1d" id="bloxter">
+            <header>
+                <h2><span class="project-name">Bloxter - лучший Minecraft-клон для Яндекс Игр</span></h2>
+                <div class="actions"><a class="project-link" href="https://yandex.ru/games/app/392799?lang=ru" target="_blank" rel="noopener noreferrer"><i class="ico fa-brands fa-yandex" style="--icon-color:#fc3f1d" aria-hidden="true"></i><span>Открыть в Яндекс Играх</span></a></div>
+            </header>
+            <hr>
+            <div class="media-row">
+                <figure class="media" data-kind="image" data-full-src="bloxter1.webp">
+                    <img class="media-thumb" data-thumb-src="thumbs/bloxter1.webp" width="480" height="270" decoding="async" loading="lazy" alt="Bloxter screenshot 1">
+                    <button class="media-action" type="button" data-load-media aria-label="Открыть медиа"><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></button>
+                </figure>
+                <figure class="media" data-kind="image" data-full-src="bloxter2.webp">
+                    <img class="media-thumb" data-thumb-src="thumbs/bloxter2.webp" width="480" height="270" decoding="async" loading="lazy" alt="Bloxter screenshot 2">
+                    <button class="media-action" type="button" data-load-media aria-label="Открыть медиа"><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></button>
+                </figure>
+            </div>
+            <p class="text">Изначально меня позвали на проект, чтобы помочь команде из трёх человек сделать разработку более эффективной. Разработка действительно стала эффективнее после моего прихода — всех троих пришлось уволить. Проект был завершён, вышел в свет, собрал метрики, пережил два пивота и, не найдя своей ниши, пал смертью храбрых.
+Тезисно:
+- Соло-разработка (это было тяжело).
+- Server-authoritative-архитектура на FishNet Networking с несколькими моими патчами. Один из них вмерджили в официальный репозиторий библиотеки нетворкинга. Клиентский код полностью отделён от серверного. У клиентов нет никакой возможности посмотреть серверные функции.
+- Серверы, способные выдержать 128 человек. Кастомный оркестратор серверов, бэкенд с кучей ММО-логики, Redis Streams как шина событий бэкенда для игровых серверов.
+- Экстремальные оптимизации стриминга мира, кастомный палитровый бит-паковый кодек вокселей чанков, самописный Area of Interest, клиентское предсказание сломанных блоков с реконсиляцией.
+- Реализация WebGL-клиента в iframe для моментальных обновлений без модерации Яндекса. Скаффолдинг для доставки билдов прямо из Unity в S3, где хранятся все билды, с возможностью отката и т. п. Что-то вроде мини-админки Яндекс Игр, только прямо в Unity.
+- Моя личная гордость — система мультиплеерного инвентаря, которую невозможно взломать и в которой невозможно надюпать предметы. Сервер никогда не доверяет клиенту — не только в инвентаре, но даже в мелочах вроде просмотра рекламы. При общении с сервером используются FNV-1a-хеш всего инвентаря и версия, а при рассинхроне — тикеты и FIFO с ребейзом; все операции атомарны. Точно так же реализована система трейдинга между игроками.
+- Тысячи мобов на одном сервере с оптимизациями и автоматическим переходом в спящий режим, когда поблизости нет игроков.
+- Примитивная процедурная генерация.</p>
+        </article>
+        <article class="card" style="--accent:#4CAF50" id="evofrogs">
+            <header>
+                <h2><span class="project-name">Evo Frogs — криптопроект с инвестициями $3млн</span></h2>
+                <div class="actions"><a class="project-link" href="https://t.me/pepememe" target="_blank" rel="noopener noreferrer"><i class="ico fa-brands fa-telegram" style="--icon-color:#58aefe" aria-hidden="true"></i><span>Бот с игрой</span></a><a class="project-link" href="https://apps.apple.com/gb/app/evo-frogs/id6744894700?uo=2" target="_blank" rel="noopener noreferrer"><i class="ico fa-brands fa-app-store-ios" style="--icon-color:#418fde" aria-hidden="true"></i><span>Игра в App Store</span></a></div>
+            </header>
+            <hr>
+            <p class="muted">Техлид проекта для криптокоина $PEPEMEME с инвестициями $3млн. Руководил командой из 5 человек, набрал и обучил команду с нуля после ухода предыдущей.</p>
+            <div class="media-row">
+                <figure class="media" data-hover-video="clips/evofrogs1.mp4" tabindex="0">
+                    <img class="media-thumb" data-thumb-src="thumbs/evofrogs1.webp" width="480" height="270" decoding="async" loading="lazy" alt="evofrogs media 1">
+                </figure>
+                <figure class="media" data-hover-video="clips/evofrogs2.mp4" tabindex="0">
+                    <img class="media-thumb" data-thumb-src="thumbs/evofrogs2.webp" width="480" height="270" decoding="async" loading="lazy" alt="evofrogs media 2">
+                </figure>
+            </div>
+            <p class="text">30к активных месячных пользователей, 2млн пользователей всего.
+Полностью реализован неткод на Mirror, матчмейкинг и автоматическая оркестрация билдов.
+Архитектура проекта позволила за 2 месяца собрать релизы на Android, iOS и Telegram.</p>
+            <details class="more"><summary><span>Показать полностью</span><i class="summary-icon fa-solid fa-chevron-down" aria-hidden="true"></i></summary><p class="text">Этот проект стал настоящим испытанием на прочность моих лидерских качеств. После ухода старой команды пришлось буквально восстанавливать проект с нуля:
 
-            <button class="theme-toggle" id="theme-toggle">
-            </button>
-        </div>
-    </body>
+- Организовал архитектуру всего проекта с учётом мультиплатформенности
+- Написал половину бекенда на ASP.NET пока искали отдельного бекендера
+- Создал систему паттерновых скинов как в CS2 — каждый скин из кейса абсолютно уникален
+- Разработал телеграм-бота с рассылкой ежедневных сообщений на 2млн пользователей
+- Настроил полноценную аналитику и воронки перед закупкой трафика
+- Провёл десятки технических собеседований и прокачал двух сотрудников до мидл уровня
+
+Помимо разработки занимался всеми организационными процессами: составление роадмапы, подсчёт костов сервисов, настройка CI/CD, проведение созвонов и распределение задач.</p></details>
+        </article>
+        <article class="card" style="--accent:#406bfb" id="megamod">
+            <header>
+                <h2><span class="project-name">MegaMod — империя</span></h2>
+                <div class="actions"><a class="project-link" href="https://investors.megamod.io/" target="_blank" rel="noopener noreferrer"><i class="ico fa-solid fa-arrow-right" aria-hidden="true"></i><span>Узнать подробнее</span></a></div>
+            </header>
+            <hr>
+            <p class="muted">Разработчик множества продуктов одного из самых революционных стартапов. Даже на канале Forbes его показывали! С помощью MegaMod было создано более 70 тыс. игр.</p>
+            
+            <p class="text">- Работа в прекрасной команде
+- Mixed-позиция: начиная от кор-механик, оптимизаций и шейдеров, заканчивая разработкой бекенда и CI/CD
+- Интенсивное использование мультиплеера Photon
+- Работа с WebGL
+- Оптимизация игры
+- Создание инструментов редактора
+- Добавление геймплейных фичей
+- Создание инфраструктуры для команды (телеграм-бот для ежедневных отчетов)</p>
+            
+        </article>
+        <article class="card" style="--accent:#0AAB4D" id="chillage">
+            <header>
+                <h2><span class="project-name">Chillage — амбициозный пет-проект на собственном игровом движке</span></h2>
+                <div class="actions"><span class="project-link disabled" aria-disabled="true"><i class="ico fa-brands fa-youtube" style="--icon-color:#ff0000" aria-hidden="true"></i><span>Скоро видео о создании</span></span></div>
+            </header>
+            <hr>
+            <p class="muted">Proof-of-concept, который проверил меня на прочность. Игра была создана с нуля на языке C, без движка, без библиотек. Всё своё, всё handmade.</p>
+            <div class="media-row">
+                <figure class="media" data-hover-video="clips/chillage1.mp4" tabindex="0">
+                    <img class="media-thumb" data-thumb-src="thumbs/chillage1.webp" width="480" height="270" decoding="async" loading="lazy" alt="chillage media 1">
+                </figure>
+                <figure class="media" data-hover-video="clips/chillage2.mp4" tabindex="0">
+                    <img class="media-thumb" data-thumb-src="thumbs/chillage2.webp" width="480" height="270" decoding="async" loading="lazy" alt="chillage media 2">
+                </figure>
+            </div>
+            <p class="text">Каждый уважающий себя игровой разработчик должен хоть раз задуматься: а как написать свой движок?
+Каждый, не уважающий своё время игровой разработчик, должен попробовать его написать!</p>
+            <details class="more"><summary><span>Показать полностью</span><i class="summary-icon fa-solid fa-chevron-down" aria-hidden="true"></i></summary><p class="text">Это до сих пор остаётся одной из самых сложных вещей, что я делал. Встретиться с WinAPI лицом к лицу после .NET — это испытание не для всех. Всё началось как proof-of-concept одного пиксельного шейдера, а медленно переросло в создание своей игры на OpenGL.
+Каждая задача была для меня вызовом, потому что я никогда такого не делал, а ресурсов для midcore OpenGL программирования довольно мало. Захотелось, чтобы при клике мышкой по объекту он выделялся. Вроде бы тривиально, но, подождите, у нас даже нет 3D-пространства в игре. И вот так буквально с каждой задачей. Ну ладно, разобрались с матрицами линейных трансформаций, создали камеру, написали шейдер — можно рендерить. А куда рендерить? Чёрт!
+Продолжать можно бесконечно, этому я посвятил отдельный канал в телеграме.
+
+Из интересного:
+- Метапрограммы для рефлексии в коде. Это стало основной фичей редактора движка.
+- Возможность записывать состояние игры и ввод пользователя. И воспроизводить это бесконечно. В сочетании с динамической подгрузкой .dll с игровой логикой это позволяет редактировать код и сразу видеть, как он меняет поведение игры в реальном времени — без скриптовых языков!
+- Самописный импортёр .gltf файлов с текстурами и материалами.
+- Собственный динамический батчинг геометрии.
+- Система чанков, которые реже обновляются за пределами камеры.
+- Реализация Point Light с тенями.
+- Кастомный UI со своим батчингом и рендерингом текста.
+- Система партиклов с настройками как в Unity.
+- SIMD оптимизации.</p></details>
+        </article>
+        <article class="card" style="--accent:#5662f6" id="megaobby">
+            <header>
+                <h2><span class="project-name">MegaObby — обби для Discord Activities!</span></h2>
+                <div class="actions"><a class="project-link" href="https://megarun.playroom.gg/" target="_blank" rel="noopener noreferrer"><i class="ico fa-solid fa-bolt" aria-hidden="true"></i><span>Попробовать в браузере</span></a></div>
+            </header>
+            <hr>
+            <p class="muted">Моё видение того, как должны выглядеть Obby-игры. Написана на низкоуровневом Playroom мультиплеере. Будет одной из игр, фичернутых в Discord.
+Всё ещё в разработке.</p>
+            <div class="media-row">
+                <figure class="media" data-hover-video="clips/megaobby1.mp4" tabindex="0">
+                    <img class="media-thumb" data-thumb-src="thumbs/megaobby1.webp" width="480" height="270" decoding="async" loading="lazy" alt="megaobby media 1">
+                </figure>
+                <figure class="media" data-hover-video="clips/megaobby2.mp4" tabindex="0">
+                    <img class="media-thumb" data-thumb-src="thumbs/megaobby2.webp" width="480" height="270" decoding="async" loading="lazy" alt="megaobby media 2">
+                </figure>
+            </div>
+            <p class="text">Из интересного: используется низкоуровневый мультиплеер. Вся синхронизация лежит на мне. Свои алгоритмы интерполяции, самописные метапрограммы для создания структур синхронизации, свой тикрейт.
+Благодаря партнёрству с Playroom, работаю с командой мультиплеера напрямую. Коммуникация на английском языке. Помогаю им чинить их же баги.</p>
+            
+        </article>
+        <article class="card" style="--accent:#da397d" id="notalone">
+            <header>
+                <h2><span class="project-name">NotAlone — LGBT* friendly дейт-сим для одиноких дам и даместосов!</span></h2>
+                <div class="actions"><a class="project-link" href="https://apps.apple.com/us/app/notalone-love-chat-story/id1567415285" target="_blank" rel="noopener noreferrer"><i class="ico fa-brands fa-app-store-ios" style="--icon-color:#418fde" aria-hidden="true"></i><span>Игра в AppStore</span></a></div>
+            </header>
+            <hr>
+            <p class="muted">*Решением Верховного суда «международное движение ЛГБТ» признано экстремистским и запрещено в России.</p>
+            <div class="media-row">
+                <figure class="media" data-kind="image" data-full-src="notalone1.png">
+                    <img class="media-thumb" data-thumb-src="thumbs/notalone1.webp" width="480" height="270" decoding="async" loading="lazy" alt="notalone media 1">
+                    <button class="media-action" type="button" data-load-media aria-label="Открыть медиа"><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></button>
+                </figure>
+                <figure class="media" data-kind="image" data-full-src="notalone2.gif">
+                    <img class="media-thumb" data-thumb-src="thumbs/notalone2.webp" width="480" height="270" decoding="async" loading="lazy" alt="notalone media 2">
+                    <button class="media-action" type="button" data-load-media aria-label="Открыть медиа"><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></button>
+                </figure>
+            </div>
+            <p class="text">Некоторые вещи хочется забыть, но в портфолио же что-то нужно положить...
+1.1 тыс. отзывов, всё-таки!</p>
+            <details class="more"><summary><span>Показать полностью</span><i class="summary-icon fa-solid fa-chevron-down" aria-hidden="true"></i></summary><p class="text">В далёком 2019 году мы начали разработку многообещающего проекта. На первых этапах я составлял 50% команды по количеству и 70% по массе в килограммах. Это был мой первый опыт работы с клиент-серверными приложениями, вебсокетами, REST и прочими штуками.
+Мне также поручили реализацию множества механик и UI-анимаций. Команда росла, я учился взаимодействовать с другими разработчиками и художниками, координировал работу команды и просто старался делать всё качественно.
+
+Хочу отметить:
+- Огромное количество аналитики (Amplitude).
+- Огромное количество рекламных офферов, их вариаций и A/B тестов.</p></details>
+        </article>
+        <article class="card" style="--accent:#2268BD" id="megacode">
+            <header>
+                <h2><span class="project-name">MegaCode — это инновация, сейчас я вам все объясню!</span></h2>
+                <div class="actions"><a class="project-link" href="https://code.megamod.io/" target="_blank" rel="noopener noreferrer"><i class="ico fa-solid fa-bolt" aria-hidden="true"></i><span>Попробовать в браузере</span></a><a class="project-link" href="https://apps.apple.com/ru/app/megacode-lite/id6463144034" target="_blank" rel="noopener noreferrer"><i class="ico fa-brands fa-app-store-ios" style="--icon-color:#418fde" aria-hidden="true"></i><span>Lite в AppStore</span></a></div>
+            </header>
+            <hr>
+            <p class="muted">Один из хедлайнеров компании, который я сделал за один марафон. Вы можете запрограммировать любой предмет обычными словами! Прямо на разговорном &#39;you know&#39;.</p>
+            <div class="media-row">
+                <figure class="media" data-kind="image" data-full-src="megacode2.gif">
+                    <img class="media-thumb" data-thumb-src="thumbs/megacode2.webp" width="480" height="270" decoding="async" loading="lazy" alt="megacode media 1">
+                    <button class="media-action" type="button" data-load-media aria-label="Открыть медиа"><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></button>
+                </figure>
+                <figure class="media" data-hover-video="clips/megacode1.mp4" tabindex="0">
+                    <img class="media-thumb" data-thumb-src="thumbs/megacode1.webp" width="480" height="270" decoding="async" loading="lazy" alt="megacode media 2">
+                </figure>
+            </div>
+            <p class="text">Босс постучался в мой роскошный кабинет и сказал: &#39;Гриша, спасай эту компанию, нам нужны инвестиции! Нам нужен продукт на стыке передовых технологий! И чтобы помещался в карман.&#39;
+– Говно вопрос, Босс!
+
+Но, на самом деле, задача оказалась не такой уж тривиальной, ведь мне пришлось соединить Roslyn, AOT, CIL interpreter и ещё несколько умных слов так, чтобы всё это работало, да ещё и прямо в браузере! Я поднял небольшую базу данных для хранения сгенерированных нейросетью и придуманных пользователями скриптов, добавил возможность их оценки. А ещё сделали мобильную версию, где можно надиктовать геймобъекту, что ему нужно делать, просто голосом. В общем пришлось сильно подумать, но я справился. Ниже напишу как</p>
+            <details class="more"><summary><span>Показать полностью</span><i class="summary-icon fa-solid fa-chevron-down" aria-hidden="true"></i></summary><p class="text">как
+
+Ну, а если серьёзно, никакого роскошного кабинета у меня нет, и я под NDA.
+Этот прототип использовался на внутренних встречах CEO компании с уважаемыми людьми по всей территории Кремниевой Долины и не только. Сооснователь Mail.ru Дмитрий Гришин, продакт-менеджер Discord, ребята из OpenAI и ещё многие другие играли в эту игру и оценили её потенциал.</p></details>
+        </article>
+        <article class="card" style="--accent:#98c448" id="tyrant">
+            <header>
+                <h2><span class="project-name">Pretty Tyrant — Tower Defense нового поколения</span></h2>
+                
+            </header>
+            <hr>
+            <p class="muted">Она стоила нам целую шаурмечную!</p>
+            <div class="media-row">
+                <figure class="media" data-kind="image" data-full-src="tyrant1.png">
+                    <img class="media-thumb" data-thumb-src="thumbs/tyrant1.webp" width="480" height="270" decoding="async" loading="lazy" alt="tyrant media 1">
+                    <button class="media-action" type="button" data-load-media aria-label="Открыть медиа"><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></button>
+                </figure>
+                <figure class="media" data-kind="image" data-full-src="tyrant2.gif">
+                    <img class="media-thumb" data-thumb-src="thumbs/tyrant2.webp" width="480" height="270" decoding="async" loading="lazy" alt="tyrant media 2">
+                    <button class="media-action" type="button" data-load-media aria-label="Открыть медиа"><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></button>
+                </figure>
+            </div>
+            <p class="text">Один из моих самых любимых проектов, где я попробовал множество новых подходов к программированию. Он был многообещающим, но его ждала печальная судьба. Сначала у главного идеолога появились проблемы с его шаурмечной, из-за чего проект заморозили на несколько месяцев. А потом денег хватило ещё на месяц разработки, после чего пришлось перейти на дешёвых студентов, а я должен был решить: работать за будущие проценты или уйти в MegaMod за настоящие деньги.</p>
+            <details class="more"><summary><span>Показать полностью</span><i class="summary-icon fa-solid fa-chevron-down" aria-hidden="true"></i></summary><p class="text">Шаурмы не будет.
+Зато есть несколько интересных фактов:
+- Это первая игра, в которой я попробовал DOTS и сделал ультра-быстрый A* патфайндер.
+- Архитектура игры была построена так, чтобы каждая сущность могла иметь любые способности, поведенческие паттерны и использовать синергию эффектов. Можно буквально в один клик сделать, чтобы какой-нибудь забор стрелял фаерболлами, замедляющими других сущностей. А если они ещё в снег наступят — удачи им!
+- Я помогал находить на проект достойную, но дешёвую версию себя. Через меня прошло более 30 джуниоров. Дорогой HR, если ты читаешь это, держись!
+- Игра была реализована таким образом, чтобы максимально отделить представление от логики, а логику от текущего состояния. Это позволило делать deep save игры. При заходе в иру через неделю, она восстанавливает свое состояние вплоть до положения летящего снаряда где-то в воздухе. Из-за этого можно прерывать игровые сессии в любой момент и не бояться, что прогресс даже одного небольшого уровня будет утерян.
+- ИИ для мобов тупой как пробка, но в следующем проекте хочу уделить этому много внимания.</p></details>
+        </article>
+        <article class="card" style="--accent:#bdd2e5" id="sketch">
+            <header>
+                <h2><span class="project-name">Sketch-Pro — медитативная раскраска по номерам</span></h2>
+                
+            </header>
+            <hr>
+            <p class="muted">Мой первый крупный соло-проект и огромное количество технических вызовов.</p>
+            <div class="media-row">
+                <figure class="media" data-kind="image" data-full-src="sketchpro1.jpg">
+                    <img class="media-thumb" data-thumb-src="thumbs/sketchpro1.webp" width="480" height="270" decoding="async" loading="lazy" alt="sketch media 1">
+                    <button class="media-action" type="button" data-load-media aria-label="Открыть медиа"><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></button>
+                </figure>
+                <figure class="media" data-kind="image" data-full-src="sketchpro2.jpg">
+                    <img class="media-thumb" data-thumb-src="thumbs/sketchpro2.webp" width="480" height="270" decoding="async" loading="lazy" alt="sketch media 2">
+                    <button class="media-action" type="button" data-load-media aria-label="Открыть медиа"><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></button>
+                </figure>
+            </div>
+            <p class="text">Казалось бы, что сложного — сделать обычную раскраску, где нужно выбрать цвет и ткнуть? Ну давайте подумаем...</p>
+            <details class="more"><summary><span>Показать полностью</span><i class="summary-icon fa-solid fa-chevron-down" aria-hidden="true"></i></summary><p class="text">Для начала нужно создать workflow для художников. Мы же не хотим, чтобы они тратили лишнее время на всякие мелочи. Поэтому я написал с нуля скрипт для Illustrator (до этого никогда не писал JS-скрипты, но долг зовёт), который нарезает изображения по слоям с цветовой кодировкой. Далее пришлось написать с нуля PSD-импортёр (пустяки, да?), который автоматически создаёт префаб раскраски с нужными слоями.
+Ой, погодите, нам же нужны номера цветов! Заставим художников тратить на это ещё пару часов? Нет, лучше напишем свой алгоритм для поиска геометрического центра любой формы! Но сначала узнаем, как это вообще работает.
+Круто, теперь мы генерируем даже номера цветов. Теперь настроим доставку контента! Вы знаете, как это делать? Я тоже нет! Но когда это нас останавливало? Изучаем AWS S3, CDN, Unity Addressables. Встраиваем рекламу и продаём на китайский рынок (я, конечно, не этого хотел, но да ладно).
+
+Это был проект, на котором я старался максимально использовать принципы SOLID/Clean Code. С тех пор я больше таких экспериментов не провожу и предпочитаю Data-Oriented подход к разработке.</p></details>
+        </article>
+        </section>
+    </main>
+    <button class="theme" id="theme-toggle" type="button" aria-label="Переключить тему" aria-pressed="false"><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i></button>
+</body>
 </html>
