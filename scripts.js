@@ -54,65 +54,61 @@
     const onIdle = window.requestIdleCallback || ((callback) => setTimeout(callback, 350));
     onIdle(initLazyThumbs, { timeout: 1200 });
 
-    const videoMedias = Array.from(document.querySelectorAll(".media[data-hover-video]"));
+    const videoMedias = Array.from(document.querySelectorAll(".media[data-video-src]"));
+    const animatedImageMedias = Array.from(document.querySelectorAll(".media[data-animated-src]"));
 
-    function ensureHoverVideo(media) {
-        let video = media.querySelector("video.hover-video");
-        if (video) return video;
+    function showMedia(media, element) {
+        element.classList.add("loaded");
+        media.classList.add("media-ready");
+    }
+
+    function loadVideo(media) {
+        if (media.dataset.mediaLoading) return;
+        media.dataset.mediaLoading = "true";
 
         const thumb = media.querySelector(".media-thumb");
         if (thumb) loadThumb(thumb);
 
-        video = document.createElement("video");
-        video.className = "hover-video";
+        const video = document.createElement("video");
+        video.className = "auto-media";
         video.muted = true;
         video.loop = true;
         video.playsInline = true;
         video.preload = "auto";
-        video.src = media.dataset.hoverVideo;
-        video.addEventListener("canplay", () => showVideo(media, video), { once: true });
+        video.addEventListener("canplay", () => {
+            showMedia(media, video);
+            if (!document.hidden) video.play().catch(() => {});
+        }, { once: true });
+        video.src = media.dataset.videoSrc;
         media.append(video);
-        return video;
+        video.load();
     }
 
-    function showVideo(media, video) {
-        video.classList.add("loaded");
-        media.classList.add("video-ready");
-        video.play().catch(() => {});
+    function loadAnimatedImage(media) {
+        if (media.dataset.mediaLoading) return;
+        media.dataset.mediaLoading = "true";
+
+        const thumb = media.querySelector(".media-thumb");
+        if (thumb) loadThumb(thumb);
+
+        const image = document.createElement("img");
+        image.className = "auto-media";
+        image.alt = thumb ? thumb.alt : "";
+        image.addEventListener("load", () => showMedia(media, image), { once: true });
+        image.addEventListener("error", () => image.remove(), { once: true });
+        image.src = media.dataset.animatedSrc;
+        media.append(image);
     }
 
-    function playHoverVideo(media) {
-        if (!media || !media.dataset.hoverVideo) return;
-        const video = ensureHoverVideo(media);
-        media.classList.add("hovering");
-        if (video.readyState >= 3) showVideo(media, video);
-        video.play().catch(() => {});
-    }
-
-    function pauseHoverVideo(media) {
-        if (media && media.classList.contains("video-ready")) {
-            media.classList.remove("hovering");
-            return;
-        }
-        const video = media && media.querySelector("video.hover-video");
-        if (!video) return;
-        video.pause();
-        video.currentTime = 0;
-        media.classList.remove("hovering");
-    }
-
-    function startVideoHydration() {
-        videoMedias.forEach((media) => {
-            const video = ensureHoverVideo(media);
-            if (video.readyState >= 3) showVideo(media, video);
-            else video.load();
-        });
+    function startMediaHydration() {
+        videoMedias.forEach(loadVideo);
+        animatedImageMedias.forEach(loadAnimatedImage);
     }
 
     function resumeReadyVideos() {
         videoMedias.forEach((media) => {
-            const video = media.querySelector("video.hover-video");
-            if (video && media.classList.contains("video-ready")) {
+            const video = media.querySelector("video.auto-media");
+            if (video && media.classList.contains("media-ready")) {
                 video.play().catch(() => {});
             }
         });
@@ -120,19 +116,19 @@
 
     function pauseReadyVideos() {
         videoMedias.forEach((media) => {
-            const video = media.querySelector("video.hover-video");
+            const video = media.querySelector("video.auto-media");
             if (video) video.pause();
         });
     }
 
-    function scheduleVideoHydration() {
-        window.setTimeout(() => onIdle(startVideoHydration, { timeout: 1600 }), 700);
+    function scheduleMediaHydration() {
+        window.setTimeout(() => onIdle(startMediaHydration, { timeout: 1600 }), 700);
     }
 
     if (document.readyState === "complete") {
-        scheduleVideoHydration();
+        scheduleMediaHydration();
     } else {
-        window.addEventListener("load", scheduleVideoHydration, { once: true });
+        window.addEventListener("load", scheduleMediaHydration, { once: true });
     }
 
     document.addEventListener("visibilitychange", () => {
@@ -143,54 +139,4 @@
         }
     });
 
-    videoMedias.forEach((media) => {
-        media.addEventListener("pointerenter", () => playHoverVideo(media));
-        media.addEventListener("pointerleave", () => pauseHoverVideo(media));
-        media.addEventListener("mouseenter", () => playHoverVideo(media));
-        media.addEventListener("mouseleave", () => pauseHoverVideo(media));
-        media.addEventListener("mousemove", () => {
-            if (!media.classList.contains("hovering")) playHoverVideo(media);
-        });
-        media.addEventListener("focus", () => playHoverVideo(media));
-        media.addEventListener("blur", () => pauseHoverVideo(media));
-    });
-
-    document.addEventListener("click", (event) => {
-        const button = event.target.closest("[data-load-media]");
-        if (!button) return;
-
-        const media = button.closest(".media");
-        if (!media || media.dataset.fullLoaded) return;
-
-        const src = media.dataset.fullSrc;
-        const thumb = media.querySelector(".media-thumb");
-        if (!src) return;
-
-        media.dataset.fullLoaded = "true";
-        button.remove();
-
-        if (media.dataset.kind === "video") {
-            const video = document.createElement("video");
-            video.className = "loaded";
-            video.controls = true;
-            video.autoplay = true;
-            video.loop = true;
-            video.muted = true;
-            video.playsInline = true;
-            video.preload = "metadata";
-            video.src = src;
-            if (thumb) thumb.replaceWith(video);
-            else media.append(video);
-            video.play().catch(() => {});
-            return;
-        }
-
-        const image = document.createElement("img");
-        image.decoding = "async";
-        image.alt = thumb ? thumb.alt : "";
-        image.addEventListener("load", () => image.classList.add("loaded"), { once: true });
-        image.src = src;
-        if (thumb) thumb.replaceWith(image);
-        else media.append(image);
-    });
 })();
