@@ -33,6 +33,30 @@
         img.src = img.dataset.thumbSrc;
     }
 
+    let printOpenState = null;
+
+    function prepareForPrint() {
+        document.querySelectorAll("img[data-thumb-src]").forEach(loadThumb);
+        printOpenState = Array.from(document.querySelectorAll("details"), (details) => details.open);
+        document.querySelectorAll("details").forEach((details) => {
+            details.open = true;
+        });
+        body.classList.add("printing");
+    }
+
+    function restoreAfterPrint() {
+        if (printOpenState) {
+            document.querySelectorAll("details").forEach((details, index) => {
+                details.open = printOpenState[index];
+            });
+        }
+        printOpenState = null;
+        body.classList.remove("printing");
+    }
+
+    window.addEventListener("beforeprint", prepareForPrint);
+    window.addEventListener("afterprint", restoreAfterPrint);
+
     function initLazyThumbs() {
         const thumbs = Array.from(document.querySelectorAll("img[data-thumb-src]"));
         if (!("IntersectionObserver" in window)) {
